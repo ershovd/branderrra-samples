@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+BackgroundImage="login_back.png"
+Title = "{Binding Title}"
+Icon="{Binding Icon}"
+x:Class="Branderra.RegisterView">
+	<ContentPage.Content>
+	<StackLayout Orientation="Vertical" VerticalOptions="Fill" Padding="20, 100, 20, 20" Spacing="20">			
+			<Entry Text="{Binding EmailText}" Placeholder="Емейл" HorizontalOptions="FillAndExpand" PlaceholderColor="Black" TextColor="Black" />
+			<Entry Text="{Binding PasswordText}" Placeholder="Пароль" HorizontalOptions="FillAndExpand" IsPassword="true" PlaceholderColor="Black" TextColor="Black" />
+			<Entry Text="{Binding ConfirmPasswordText}" Placeholder="Повторите пароль" HorizontalOptions="FillAndExpand" IsPassword="true" PlaceholderColor="Black" TextColor="Black"/>
+			<Button Command="{Binding RegisterCommand}" Text="Регистрация" x:Name="btnRegisterEnter" HorizontalOptions="FillAndExpand" TextColor="White" />
+	</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

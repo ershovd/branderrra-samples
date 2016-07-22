@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+Title="{Binding Title}"
+x:Class="Branderra.SearchBarView">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical">
+			<SearchBar x:Name="barMainSearch" Placeholder="Искать вещи, бренды, модели.." HorizontalOptions="FillAndExpand" 
+			 SearchCommand="{Binding SearchCommand}" Text="{Binding SearchText}" VerticalOptions="Start" />
+			<ListView x:Name="itemsSearchList" ItemsSource="{Binding Items}" SelectedItem="{Binding ItemSelected}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					 <TextCell Text="{Binding Title}" TextColor="Black"/>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

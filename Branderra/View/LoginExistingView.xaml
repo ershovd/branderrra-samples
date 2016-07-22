@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+Title="{Binding Title}"
+Icon="{Binding Icon}"
+BackgroundImage="login_back.png"
+x:Class="Branderra.LoginExistingView">
+	<ContentPage.Content>
+	<StackLayout Orientation="Vertical" HorizontalOptions="Fill" Padding="20, 100, 20, 20" Spacing="20">
+			<Entry Text="{Binding LoginText}" Placeholder="Введите логин" HorizontalOptions="FillAndExpand" PlaceholderColor="Black" TextColor="Black"/>
+			<Entry Text="{Binding PasswordText}" Placeholder="Введите пароль" IsPassword="true" HorizontalOptions="FillAndExpand" PlaceholderColor="Black" TextColor="Black" />
+			<Button x:Name="btnLogin" Text="Войти" HorizontalOptions="FillAndExpand" TextColor="White" Command="{Binding LoginCommand}" />
+	</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

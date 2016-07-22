@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:Branderra;assembly=Branderra"
+Title="{Binding Title}"
+Icon="{Binding Icon}"
+xmlns:circle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+x:Name="UserProfileView"
+x:Class="Branderra.UserProfileView">
+	<ContentPage.Content>
+	</ContentPage.Content>
+	<ListView x:Name="mainFeedlst" HasUnevenRows="true" ItemsSource="{Binding Items}" SelectedItem="{Binding ItemSelected}">
+		<ListView.ItemTemplate>
+				<DataTemplate>
+					<local:MainFeedViewCell 
+						UserName="{Binding UserName}" 
+						ItemCategoryInfo="{Binding ItemCategoryInfo}"
+						ItemTypeInfo="{Binding ItemTypeInfo}"
+						ItemBrandInfo="{Binding ItemBrandInfo}"
+						UserAvatarSource="{Binding UserAvatarSource}"
+						FeedPhotoSource="{Binding FeedPhotoSource}"
+						PostDescription="{Binding PostDescription}"
+						TimeOfPost="{Binding TimeOfPost}"
+						ProfileClickedCommand="{Binding ProfileClickedCommand}"
+						BrandClickedCommand="{Binding BrandClickedCommand}"
+						TypeClickedCommand="{Binding TypeClickedCommand}"
+						CategoryClickedCommand="{Binding CategoryClickedCommand}"
+						CommentsClickCommand="{Binding CommentsClickCommand}"
+						PublishPostCommand="{Binding PublishPostCommand}"
+						Rating="{Binding Rating}">
+					</local:MainFeedViewCell>
+				</DataTemplate>
+		</ListView.ItemTemplate>		
+	</ListView>
+
+	<!--
+	<ScrollView>
+	<StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="Fill" Padding="10">
+		<StackLayout Orientation="Horizontal" HeightRequest="60" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+			<circle:CircleImage Source="user1" HorizontalOptions="Start" HeightRequest="50" WidthRequest="50" />
+			<Label Text="Alina_95" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="Medium" />
+			<Label Text="4 ч" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" FontSize="Micro" />
+		</StackLayout>
+
+		<Image Source="profile_image.png" HorizontalOptions="FillAndExpand" HeightRequest="400" WidthRequest="400" VerticalOptions="Center" />
+
+		<StackLayout Orientation="Horizontal" HeightRequest="20" Spacing="20" Padding="10,0,10,0" HorizontalOptions="Fill" >
+			<Label Text="Одежда" HorizontalOptions="Start" />
+			<Label Text="Пальто" HorizontalOptions="Start" />
+			<Label Text="Zara" HorizontalOptions="Start" />
+			<Image Source="stars.png" HorizontalOptions="EndAndExpand"/>
+		</StackLayout>
+
+		<ListView x:Name="listPostNewsView" HasUnevenRows="true" >
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<local:UserPostInfoViewCell
+						Title="{Binding Title}"
+						Detail="{Binding Detail}">
+					</local:UserPostInfoViewCell>						
+				</DataTemplate>						 
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+	</ScrollView>
+	-->
+</ContentPage>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:Branderra;assembly=Branderra"
+ Title="{Binding Title}"
+ Icon="{Binding Icon}"
+x:Class="Branderra.ItemCategoryListView">	
+	<ContentPage.Content >
+	<StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" Orientation="Vertical">
+		<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" ColumnSpacing="20" Padding="20">
+			 <Grid.RowDefinitions>
+			 	<RowDefinition Height="*" />
+			 	<RowDefinition Height="*" />
+			 	<RowDefinition Height="*" />
+			 </Grid.RowDefinitions>
+			 <Grid.ColumnDefinitions>			 	
+			 	<ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 </Grid.ColumnDefinitions>
+
+			 <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Start">
+         <Image x:Name="imgCarsCategory" Source="cars.png" VerticalOptions="Start" HorizontalOptions="Start" >
+           <Image.GestureRecognizers>
+             <TapGestureRecognizer Command="{Binding NavigateToCategory}" CommandParameter="car" />
+           </Image.GestureRecognizers>
+         </Image>
+			 	<Label Text="Автомобили" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="End">
+         <Image x:Name="imgClothesCategory" Source="clothes.png" VerticalOptions="Start" HorizontalOptions="End" >
+           <Image.GestureRecognizers>
+             <TapGestureRecognizer Command="{Binding NavigateToCategory}" CommandParameter="car" />
+           </Image.GestureRecognizers>
+         </Image>
+			 	<Label Text="Одежда и обувь" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Start">
+         <Image x:Name="imgElectronicsCategory" Source="electronics.png" VerticalOptions="Center" HorizontalOptions="Start" >
+           <Image.GestureRecognizers>
+             <TapGestureRecognizer Command="{Binding NavigateToCategory}" CommandParameter="car" />
+           </Image.GestureRecognizers>
+         </Image>
+			 	<Label Text="Электроника" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="End">
+         <Image x:Name="imgCosmeticsCategory" Source="cosmetics.png" VerticalOptions="Center" HorizontalOptions="End" >
+           <Image.GestureRecognizers>
+             <TapGestureRecognizer Command="{Binding NavigateToCategory}" CommandParameter="car" />
+           </Image.GestureRecognizers>
+         </Image>
+			 	<Label Text="Косметика и парфюмерия" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" VerticalOptions="End" HorizontalOptions="Start">
+         <Image x:Name="imgSportsCategory" Source="sports.png" VerticalOptions="End" HorizontalOptions="Start" >
+           <Image.GestureRecognizers>
+             <TapGestureRecognizer Command="{Binding NavigateToCategory}" CommandParameter="car" />
+           </Image.GestureRecognizers>
+         </Image>
+			 	<Label Text="Спортивные товары" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Vertical" VerticalOptions="End" HorizontalOptions="End">
+         <Image x:Name="imgOtherCategory" Source="other_goods.png" VerticalOptions="End" HorizontalOptions="End">
+           <Image.GestureRecognizers>
+             <TapGestureRecognizer Command="{Binding NavigateToCategory}" CommandParameter="car" />
+           </Image.GestureRecognizers>
+         </Image>
+			 	<Label Text="Прочее" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			 </StackLayout>
+
+		</Grid>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

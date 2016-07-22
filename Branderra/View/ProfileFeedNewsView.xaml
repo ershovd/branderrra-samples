@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+xmlns:local="clr-namespace:Branderra;assembly=Branderra"
+xmlns:circle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+Title="{Binding Title}"
+Icon="{Binding Icon}"
+x:Class="Branderra.ProfileFeedNewsView">
+	<ContentPage.Content>
+	<StackLayout HorizontalOptions="Fill" VerticalOptions="Start" Orientation="Vertical">
+		<StackLayout Orientation="Horizontal" HeightRequest="50" WidthRequest="50" Padding="20,10,20,0">
+			<circle:CircleImage Source="user1" HorizontalOptions="Start" HeightRequest="50" WidthRequest="50" />
+			<Label Text="Alina_95" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" />
+			<Button Text="Подписаться" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="{x:Static local:Constants.ColorBlue}" TextColor="White"/>
+		</StackLayout>
+		<ScrollView VerticalOptions="Start"  HorizontalOptions="FillAndExpand">
+		<Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start" RowSpacing="20" ColumnSpacing="20" Padding="10,0,10,0">
+			 <Grid.RowDefinitions>
+			 	<RowDefinition Height="170" />
+			 	<RowDefinition Height="170" />
+			 	<RowDefinition Height="170" />
+			 </Grid.RowDefinitions>
+			 <Grid.ColumnDefinitions>			 	
+			 	<ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 </Grid.ColumnDefinitions>
+
+			 <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Start">
+			 	<Image x:Name="imgCarsCategory" Source="cars.png" VerticalOptions="Start" HorizontalOptions="Start" />
+			 	<StackLayout Orientation="Horizontal" HeightRequest="20"  Spacing="5" HorizontalOptions="FillAndExpand">
+					<Label Text="Автомобили" FontSize="Micro" HorizontalOptions="Start" />
+					<Label Text="BMW" FontSize="Micro" HorizontalOptions="Center" />
+					<Label Text="X6" FontSize="Micro" HorizontalOptions="End" />
+				</StackLayout>
+				<local:StarOnlyLabeView HorizontalOptions="Center" />
+				<!--<Image Source="stars.png" HorizontalOptions="CenterAndExpand" HeightRequest="10"/> -->
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="End">
+			 	<Image x:Name="imgClothesCategory" Source="clothes.png" VerticalOptions="Start" HorizontalOptions="End" />
+			 	<StackLayout Orientation="Horizontal" HeightRequest="20"  Spacing="5" HorizontalOptions="FillAndExpand">
+					<Label Text="Одежда и обувь" FontSize="Micro" HorizontalOptions="Start" />
+					<Label Text="Zara" FontSize="Micro" HorizontalOptions="Center" />
+					<Label Text="Платье" FontSize="Micro" HorizontalOptions="End" />
+				</StackLayout>
+				<local:StarOnlyLabeView HorizontalOptions="Center" />
+				<!--<Image Source="stars.png" HorizontalOptions="CenterAndExpand" HeightRequest="10"/> -->
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Start">
+			 	<Image x:Name="imgElectronicsCategory" Source="electronics.png" VerticalOptions="Start" HorizontalOptions="Start" />
+			 	<StackLayout Orientation="Horizontal" HeightRequest="20"  Spacing="5" HorizontalOptions="FillAndExpand">
+					<Label Text="Электроника" FontSize="Micro" HorizontalOptions="Start" />
+					<Label Text="Bosh" FontSize="Micro" HorizontalOptions="Center" />
+					<Label Text="Утюги" FontSize="Micro" HorizontalOptions="End" />
+				</StackLayout>
+				<local:StarOnlyLabeView HorizontalOptions="Center" />
+				<!-- <Image Source="stars.png" HorizontalOptions="CenterAndExpand" HeightRequest="10"/> -->
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="End">
+			 	<Image x:Name="imgCosmeticsCategory" Source="cosmetics.png" VerticalOptions="Start" HorizontalOptions="End" />
+			 	<StackLayout Orientation="Horizontal" HeightRequest="20"  Spacing="5" HorizontalOptions="FillAndExpand">
+					<Label Text="Косметика" FontSize="Micro" HorizontalOptions="Start" />
+					<Label Text="Channel" FontSize="Micro" HorizontalOptions="Center" />
+					<Label Text="Помада" FontSize="Micro" HorizontalOptions="End" />
+				</StackLayout>
+				<local:StarOnlyLabeView HorizontalOptions="Center" />
+				<!-- <Image Source="stars.png" HorizontalOptions="CenterAndExpand" HeightRequest="10"/> -->
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Start">
+			 	<Image x:Name="imgSportsCategory" Source="sports.png" VerticalOptions="End" HorizontalOptions="Start" />
+			 	<StackLayout Orientation="Horizontal" HeightRequest="20"  Spacing="5" HorizontalOptions="FillAndExpand">
+					<Label Text="Спортивные товары" FontSize="Micro" HorizontalOptions="Start" />
+					<Label Text="Nike" FontSize="Micro" HorizontalOptions="Center" />
+					<Label Text="Мячи" FontSize="Micro" HorizontalOptions="End" />
+				</StackLayout>
+				<local:StarOnlyLabeView HorizontalOptions="Center" />
+				<!-- <Image Source="stars.png" HorizontalOptions="CenterAndExpand" HeightRequest="10"/> -->
+			 </StackLayout>
+
+			 <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="End">
+			 	<Image x:Name="imgOtherCategory" Source="other_goods.png" VerticalOptions="End" HorizontalOptions="End"/>
+			 	<StackLayout Orientation="Horizontal" HeightRequest="20"  Spacing="5" HorizontalOptions="FillAndExpand">
+					<Label Text="Другое" FontSize="Micro" HorizontalOptions="Start" />
+					<Label Text="Ulmart" FontSize="Micro" HorizontalOptions="Center" />
+					<Label Text="Товары" FontSize="Micro" HorizontalOptions="End" />
+				</StackLayout>
+				<local:StarOnlyLabeView HorizontalOptions="Center" />
+				<!-- <Image Source="stars.png" HorizontalOptions="CenterAndExpand" HeightRequest="10"/> -->
+			 </StackLayout>
+			</Grid>		 
+			</ScrollView>
+		</StackLayout>	
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:Branderra;assembly=Branderra"
+BackgroundImage="login_back.png"
+Title="{Binding Title}"
+x:Class="Branderra.MainStartView">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" VerticalOptions="Fill" Padding="20, 150, 20, 20" >
+			
+			<Label HorizontalOptions="CenterAndExpand" TextColor="White" Text="Branderra" FontSize="44" />
+			<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" ColumnSpacing="20" Padding="30">
+				<Grid.RowDefinitions>
+			 	<RowDefinition Height="*" />
+			 	<RowDefinition Height="*" />
+			 </Grid.RowDefinitions>
+			 <Grid.ColumnDefinitions>
+			 	<ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Grid.Column="0" Source="vkontakte.png" HorizontalOptions="Start" VerticalOptions="Start" >
+          <Image.GestureRecognizers> 
+            <TapGestureRecognizer Command="{Binding VkontakeLoginCommand}" />
+          </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="0" Grid.Column="1" Source="instagram.png" HorizontalOptions="End" VerticalOptions="Start" >
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding InstagramLoginCommand}" />
+          </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="1" Grid.Column="0" Source="facebook.png" HorizontalOptions="Start" VerticalOptions="End" >
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding FacebookLoginCommand}" />
+          </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="1" Grid.Column="1" Source="twitter.png" HorizontalOptions="End" VerticalOptions="End" >
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding TwitterLoginCommand}" />
+          </Image.GestureRecognizers>
+        </Image>
+		</Grid>
+      <Label x:Name="btnRegisterEmail" LineBreakMode="WordWrap" HorizontalTextAlignment="Center"
+             Text="Войти или зарегистрироваться через email" FontSize="Medium" HorizontalOptions="CenterAndExpand" TextColor="White" >
+        <Label.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding LoginEmailCommand}" />
+        </Label.GestureRecognizers>          
+      </Label>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

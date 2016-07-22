@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+xmlns:local="clr-namespace:Branderra;assembly=Branderra"
+x:Class="Branderra.StarBehaviorView">
+	<ContentView.Content>
+		<StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal" HeightRequest="30">
+	      <Grid>
+	        <Grid.Behaviors>
+	          <local:StarBehavior x:Name="starOne" GroupName="userRatingStars"/>
+	        </Grid.Behaviors>
+	        <Image x:Name="starBlankOne"
+	                Source="star_outline.png" />
+
+	        <Image x:Name="starSelectedOne"
+	                Source="star_selected.png"
+	                IsVisible="{Binding Source={x:Reference starOne}, Path=IsStarred}"/>
+	      </Grid>
+	      <Grid >
+	        <Grid.Behaviors>
+	          <local:StarBehavior x:Name="starTwo" GroupName="userRatingStars"/>
+	        </Grid.Behaviors>
+	        <Image x:Name="starBlankTwo"
+	                Source="star_outline.png" />
+
+	        <Image x:Name="starSelectedTwo"
+	                Source="star_selected.png"
+	                IsVisible="{Binding Source={x:Reference starTwo}, Path=IsStarred}"/>
+	      </Grid>
+	      <Grid >
+	        <Grid.Behaviors>
+	          <local:StarBehavior x:Name="starThree" GroupName="userRatingStars"/>
+	        </Grid.Behaviors>
+	        <Image x:Name="starBlankThree"
+	                Source="star_outline.png" />
+
+	        <Image x:Name="starSelectedThree"
+	                Source="star_selected.png"
+	                IsVisible="{Binding Source={x:Reference starThree}, Path=IsStarred}"/>
+	      </Grid>
+	      <Grid >
+	        <Grid.Behaviors>
+	          <local:StarBehavior x:Name="starFour" GroupName="userRatingStars"/>
+	        </Grid.Behaviors>
+	        <Image x:Name="starBlankFour"
+	                Source="star_outline.png" />
+
+	        <Image x:Name="starSelectedFour"
+	                Source="star_selected.png"
+	                IsVisible="{Binding Source={x:Reference starFour}, Path=IsStarred}"/>
+	      </Grid>
+	      <Grid >
+	        <Grid.Behaviors>
+	          <local:StarBehavior x:Name="starFive" GroupName="userRatingStars"/>
+	        </Grid.Behaviors>
+	        <Image x:Name="starBlankFive"
+	                Source="star_outline.png" />
+
+	        <Image x:Name="starSelectedFive"
+	                Source="star_selected.png"
+	                IsVisible="{Binding Source={x:Reference starFive}, Path=IsStarred}"/>
+	      </Grid>
+	    </StackLayout>
+	</ContentView.Content>
+</ContentView>

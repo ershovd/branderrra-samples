@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell 
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:Branderra;assembly=Branderra"
+xmlns:circle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+x:Class="Branderra.MainFeedViewCell">
+	<StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Padding="10">
+		<StackLayout.Resources>
+			<ResourceDictionary>
+				<local:DateToNeatTextValueConverter x:Key="timeNeatConverter" />
+			</ResourceDictionary>
+		</StackLayout.Resources>
+		<StackLayout Orientation="Horizontal" HeightRequest="60" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+			<circle:CircleImage Source="{Binding UserAvatarSource}" HorizontalOptions="Start" HeightRequest="50" WidthRequest="50" />
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding ProfileClickedCommand}" />
+				</Image.GestureRecognizers>
+			<Label x:Name="lblProfileText" Text="{Binding UserName}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="Medium" >
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding ProfileClickedCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+			<Button Text="Поделиться" Command="{Binding PublishPostCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" FontSize="Medium"  BackgroundColor="{x:Static local:Constants.ColorBlue}" TextColor="White"/>
+			<Label Text="{Binding TimeOfPost, Converter={StaticResource timeNeatConverter}" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" FontSize="Micro" />
+		</StackLayout>
+
+		<local:RoundedCenterImage Source="{Binding FeedPhotoSource}" HeightRequest="300" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Start" />
+
+		<StackLayout Orientation="Horizontal" HeightRequest="30" Spacing="5" Padding="0,0,0,0" HorizontalOptions="FillAndExpand">
+			<local:ExtendedLabel x:Name="lblBrandType" Text="{Binding ItemTypeInfo}" VerticalOptions="Center" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" FontSize="Small" XAlign="Start" IsUnderline="true">
+				<local:ExtendedLabel.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding TypeClickedCommand}" />
+				</local:ExtendedLabel.GestureRecognizers>
+			</local:ExtendedLabel>
+			<local:ExtendedLabel x:Name="lblBrandModel" Text="{Binding ItemCategoryInfo}" VerticalOptions="Center" LineBreakMode="NoWrap"  HorizontalOptions="StartAndExpand" FontSize="Small" XAlign="Start" IsUnderline="true">
+				<local:ExtendedLabel.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CategoryClickedCommand}" />
+				</local:ExtendedLabel.GestureRecognizers>
+			</local:ExtendedLabel>
+			<local:ExtendedLabel x:Name="lblBrandName" Text="{Binding ItemBrandInfo}" VerticalOptions="Center" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" FontSize="Small" XAlign="Start" IsUnderline="true">
+				<local:ExtendedLabel.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding BrandClickedCommand}" />
+				</local:ExtendedLabel.GestureRecognizers>
+			</local:ExtendedLabel>
+			<local:StarOnlyLabeView x:Name="starBehaviourUserRate" Rating="{Binding Rating}" HeightRequest="20" WidthRequest="150" HorizontalOptions="End" />
+		</StackLayout>
+
+		<Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start" RowSpacing="5" ColumnSpacing="5" x:Name="grdComment">
+		 <Grid.RowDefinitions>			 	
+		 	<RowDefinition Height="*" />
+		 	<RowDefinition Height="*" />
+		 </Grid.RowDefinitions>
+		 <Grid.GestureRecognizers>
+		 	<!-- <TapGestureRecognizer Command="{Binding CommentsClickCommand}" /> -->
+		 </Grid.GestureRecognizers> 
+
+		 <Frame HasShadow="false" Grid.Row="0" Padding="4" OutlineColor="Gray"  HorizontalOptions="FillAndExpand">
+		 	<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+			 	<Label Text="{Binding UserName}" LineBreakMode="NoWrap" FontSize="Medium" TextColor="{x:Static local:Constants.ColorBlue}" HorizontalOptions="FillAndExpand"  VerticalOptions="Center"/>	
+				<Label Text="{Binding PostDescription}" FontSize="Small" HorizontalOptions="EndAndExpand" LineBreakMode="TailTruncation"  VerticalOptions="Center"/>
+			</StackLayout>
+		 </Frame>
+		 <Frame HasShadow="false" Grid.Row="1" Padding="4" OutlineColor="Gray"  HorizontalOptions="FillAndExpand">
+		 	<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+			 	<Label Text="KrisTi" LineBreakMode="NoWrap" FontSize="Medium"  TextColor="{x:Static local:Constants.ColorBlue}" HorizontalOptions="FillAndExpand"  VerticalOptions="Center"/>
+			 	<Label Text="Супер, мне нравится!"  HorizontalOptions="EndAndExpand" FontSize="Small" LineBreakMode="TailTruncation" VerticalOptions="Center"/>
+		 	</StackLayout>
+		 </Frame>
+		</Grid>
+	</StackLayout>	
+</ViewCell>

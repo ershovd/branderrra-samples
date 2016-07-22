@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:Branderra;assembly=Branderra"
+Title="Комментарии"
+x:Class="Branderra.CommentsListView">
+	<ContentPage.Content>
+	<StackLayout Orientation="Vertical" Padding="10" Spacing="10" HorizontalOptions="Fill" VerticalOptions="Fill">
+    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="End" Spacing="5">
+      <Entry Placeholder="Введите текст" HorizontalOptions="FillAndExpand" />
+      <Button Text="Отправить" TextColor="White" BackgroundColor="{x:Static local:Constants.ColorBlue}" HorizontalOptions="FillAndExpand"/>
+    </StackLayout>
+    <ListView x:Name="commentListView" HasUnevenRows="true">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<local:CommentListViewCell 
+						Title="{Binding Title}" 
+						Detail="{Binding Detail}" 
+						ImageFilename="{Binding ImageFilename}" 
+						Time="{Binding Time}">
+						</local:CommentListViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

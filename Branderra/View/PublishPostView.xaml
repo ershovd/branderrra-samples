@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+xmlns:local="clr-namespace:Branderra;assembly=Branderra"
+Title="{Binding Title}"
+x:Class="Branderra.PublishPostView">
+	<ContentPage.Content>
+	<ScrollView>
+		<StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="20" Spacing="10">
+			<Button Text="Добавить фотографию" Command="{Binding LoadPhotoCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" FontSize="Large" BackgroundColor="{x:Static local:Constants.ColorBlue}" TextColor="White"/>
+			<local:RoundedCenterImage Source="{Binding PhotoSource}" HorizontalOptions="Center" WidthRequest="300" HeightRequest="300" VerticalOptions="Start">
+				<Image.GestureRecognizers> 
+	            	<TapGestureRecognizer Command="{Binding SelectPictureCommand}" />
+	          	</Image.GestureRecognizers>
+			</local:RoundedCenterImage>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				<Entry Text="{Binding PhotoDescriptText}" Placeholder="Описание" HorizontalOptions="StartAndExpand" />
+
+				<local:StarBehaviorView x:Name="starBehaviourUserRate" GroupName="userRatingGroup"/>
+			</StackLayout>
+			<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+				<Picker x:Name="pckCategory" SelectedIndexChanged="Handle_CategoryIndexChanged" SelectedIndex="{Binding CategorySelectedIndex}" HorizontalOptions="FillAndExpand" Title="Категория" />
+				<Picker x:Name="pckTypes" SelectedIndexChanged="Handle_TypesIndexChanged" IsVisible="false" SelectedIndex="{Binding TypesSelectedIndex}" HorizontalOptions="FillAndExpand" Title="Типы" />
+				<Picker x:Name="pckBrand" IsVisible="false" SelectedIndex="{Binding BrandSelectedIndex}" HorizontalOptions="FillAndExpand" Title="Бренды" />
+			</StackLayout>
+			<Button Text="Опубликовать" Command="{Binding PublishPostCommand}" HorizontalOptions="FillAndExpand" FontSize="Large" TextColor="White" BackgroundColor="{x:Static local:Constants.ColorBlue}"/>
+		</StackLayout>
+	</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

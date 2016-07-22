@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:Branderra;assembly=Branderra"
+xmlns:circle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+x:Class="Branderra.ItemBrandListViewCell">
+	<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White" HeightRequest="110" Spacing="10" Padding="5">
+		<circle:CircleImage Source="{Binding ImageFilename}" HeightRequest="100" WidthRequest="100" />
+		<Label Text="{Binding Title}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+		<local:StarOnlyLabeView x:Name="starBehaviourUserRate" HeightRequest="20" WidthRequest="200" HorizontalOptions="End"/>
+	</StackLayout>
+</ViewCell>
